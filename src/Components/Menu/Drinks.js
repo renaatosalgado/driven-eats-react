@@ -22,15 +22,15 @@ const drinks = [
 const Drink = (props) => {
   return (
     <div
-      class="opcao"
+      className="opcao"
       onclick="selecionarBebida(this, 'Coquinha Gelada', 4.90)"
     >
       <img src={props.img} alt="" />
-      <div class="titulo">{props.name}</div>
-      <div class="descricao">{props.description}</div>
-      <div class="fundo">
-        <div class="preco">{props.price}</div>
-        <div class="check">
+      <div className="titulo">{props.name}</div>
+      <div className="descricao">{props.description}</div>
+      <div className="fundo">
+        <div className="preco">{props.price}</div>
+        <div className="check">
           <ion-icon name="checkmark-circle"></ion-icon>
         </div>
       </div>
@@ -41,9 +41,9 @@ const Drink = (props) => {
 export default function Drinks() {
   return (
     <>
-      <div class="secao">
-        <div class="titulo">Agora, sua bebida</div>
-        <div class="opcoes bebida">
+      <div className="secao">
+        <div className="titulo">Agora, sua bebida</div>
+        <div className="opcoes bebida">
           {drinks.map((drink, index) => (
             <Drink
               img={drink.img}

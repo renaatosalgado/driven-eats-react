@@ -23,11 +23,11 @@ const Dish = (props) => {
   return (
     <div class="opcao" onclick="selecionarPrato(this, 'Asa de Boi', 14.90)">
       <img src={props.img} alt="" />
-      <div class="titulo">{props.name}</div>
-      <div class="descricao">{props.description}</div>
-      <div class="fundo">
-        <div class="preco">{props.price}</div>
-        <div class="check">
+      <div className="titulo">{props.name}</div>
+      <div className="descricao">{props.description}</div>
+      <div className="fundo">
+        <div className="preco">{props.price}</div>
+        <div className="check">
           <ion-icon name="checkmark-circle"></ion-icon>
         </div>
       </div>
@@ -37,10 +37,10 @@ const Dish = (props) => {
 
 export default function MainCourse() {
   return (
-    <div class="secao">
-      <div class="titulo">Primeiro, seu prato</div>
-      <div class="opcoes prato">
-        
+    <div className="secao">
+      <div className="titulo">Primeiro, seu prato</div>
+      <div className="opcoes prato">
+
         {dishes.map((dish, index) => (
           <Dish
             img={dish.img}

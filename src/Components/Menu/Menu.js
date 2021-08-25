@@ -5,7 +5,7 @@ import Desserts from "./Desserts";
 export default function Menu() {
   return (
     <>
-      <div class="menu">
+      <div className="menu">
         <MainCourse />
         <Drinks />
         <Desserts />        

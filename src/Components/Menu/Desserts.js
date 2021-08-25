@@ -21,13 +21,13 @@ const desserts = [
 
 const Dessert = (props) => {
   return (
-    <div class="opcao" onclick="selecionarSobremesa(this, 'Pudim', 7.90)">
+    <div className="opcao" onclick="selecionarSobremesa(this, 'Pudim', 7.90)">
       <img src={props.img} alt="" />
-      <div class="titulo">{props.name}</div>
-      <div class="descricao">{props.description}</div>
-      <div class="fundo">
-        <div class="preco">{props.price}</div>
-        <div class="check">
+      <div className="titulo">{props.name}</div>
+      <div className="descricao">{props.description}</div>
+      <div className="fundo">
+        <div className="preco">{props.price}</div>
+        <div className="check">
           <ion-icon name="checkmark-circle"></ion-icon>
         </div>
       </div>
@@ -37,9 +37,9 @@ const Dessert = (props) => {
 
 export default function Desserts() {
   return (
-    <div class="secao">
-      <div class="titulo">Por fim, sua sobremesa</div>
-      <div class="opcoes sobremesa">
+    <div className="secao">
+      <div className="titulo">Por fim, sua sobremesa</div>
+      <div className="opcoes sobremesa">
         {desserts.map((dessert, index) => (
           <Dessert
             img={dessert.img}
