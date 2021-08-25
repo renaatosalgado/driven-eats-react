@@ -6,7 +6,8 @@ export default function MainCourse() {
         <div class="opcoes prato">
           <div
             class="opcao"
-            onclick="selecionarPrato(this, 'Estrombelete de Frango', 25.00)">
+            onclick="selecionarPrato(this, 'Estrombelete de Frango', 25.00)"
+          >
             <img src="img/frango_yin_yang.png" alt="" />
             <div class="titulo">Estrombelete de Frango</div>
             <div class="descricao">Um pouco de batata, um pouco de salada</div>
@@ -20,7 +21,8 @@ export default function MainCourse() {
 
           <div
             class="opcao"
-            onclick="selecionarPrato(this, 'Asa de Boi', 14.90)">
+            onclick="selecionarPrato(this, 'Asa de Boi', 14.90)"
+          >
             <img src="img/frango_yin_yang.png" alt="" />
             <div class="titulo">Asa de Boi</div>
             <div class="descricao">Um pouco de batata, um pouco de salada</div>
@@ -34,7 +36,8 @@ export default function MainCourse() {
 
           <div
             class="opcao"
-            onclick="selecionarPrato(this, 'Carne de Monstro', 14.90)">
+            onclick="selecionarPrato(this, 'Carne de Monstro', 14.90)"
+          >
             <img src="img/frango_yin_yang.png" alt="" />
             <div class="titulo">Carne de Monstro</div>
             <div class="descricao">Um pouco de batata, um pouco de salada</div>

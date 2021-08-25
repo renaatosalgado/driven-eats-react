@@ -9,7 +9,7 @@ export default function App() {
       <ConfirmOrder />
       <Header />
       <Menu />
-      <Footer />      
+      <Footer />
     </div>
   );
 }
