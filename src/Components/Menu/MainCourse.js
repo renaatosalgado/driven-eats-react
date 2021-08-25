@@ -40,6 +40,7 @@ export default function MainCourse() {
     <div class="secao">
       <div class="titulo">Primeiro, seu prato</div>
       <div class="opcoes prato">
+        
         {dishes.map((dish, index) => (
           <Dish
             img={dish.img}

@@ -39,17 +39,17 @@ export default function Desserts() {
   return (
     <div class="secao">
       <div class="titulo">Por fim, sua sobremesa</div>
-      <div class="opcoes sobremesa"></div>
-
-      {desserts.map((dessert, index) => (
-        <Dessert
-          img={dessert.img}
-          name={dessert.name}
-          description={dessert.description}
-          price={dessert.price}
-          key={index}
-        />
-      ))}
+      <div class="opcoes sobremesa">
+        {desserts.map((dessert, index) => (
+          <Dessert
+            img={dessert.img}
+            name={dessert.name}
+            description={dessert.description}
+            price={dessert.price}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   );
 }
