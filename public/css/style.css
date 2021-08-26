@@ -97,16 +97,36 @@
     font-size: 16px;
   }
   
-  .menu .secao .opcoes .opcao .check {
+  .menu .secao .opcoes .opcao .contador {
     opacity: 0;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+    width: 47px;
+    height: 19px;
+  }
+
+  .menu .secao .opcoes .opcao .contador .menos {
+    color: #CF2B2B;
+  }
+
+  .menu .secao .opcoes .opcao .contador .menos:hover {
+    cursor: pointer;
+  }
+
+  .menu .secao .opcoes .opcao .contador .mais {
     color: #32B72F;
-    font-size: 20px;
   }
+
+  .menu .secao .opcoes .opcao .contador .mais:hover {
+    cursor: pointer;
+  }
+
   
-  .menu .secao .opcoes .opcao.selecionado .check {
+  .menu .secao .opcoes .opcao.selecionado .contador {
     opacity: 1;
-  }
-  
+  }  
   
   .menu .secao .opcoes .opcao.selecionado {
     border: 5px solid #32B72F;

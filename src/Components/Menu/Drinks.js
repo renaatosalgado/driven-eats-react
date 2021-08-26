@@ -1,18 +1,20 @@
+import React, {useState} from "react";
+
 const drinks = [
   {
-    img: "img/coquinha_gelada.png",
-    name: "Coquinha gelada",
-    description: "Lata 350mL",
+    img: "img/kombucha.jpeg",
+    name: "Kombucha",
+    description: "Garrafa 450mL",
     price: "R$ 4,90",
   },
   {
-    img: "img/coquinha_gelada.png",
+    img: "img/caldodecana.jpeg",
     name: "Caldo de cana",
     description: "Copo 500mL",
     price: "R$ 5,50",
   },
   {
-    img: "img/coquinha_gelada.png",
+    img: "img/laranja.jpeg",
     name: "Suco de laranja",
     description: "Copo 500mL",
     price: "R$ 5,00",
@@ -20,6 +22,9 @@ const drinks = [
 ];
 
 const Drink = (props) => {
+
+  const [contador, setContador] = useState(1);
+
   return (
     <div
       className="opcao"
@@ -30,8 +35,10 @@ const Drink = (props) => {
       <div className="descricao">{props.description}</div>
       <div className="fundo">
         <div className="preco">{props.price}</div>
-        <div className="check">
-          <ion-icon name="checkmark-circle"></ion-icon>
+        <div className="contador">
+          <div className="menos" onClick={() => setContador(contador-1)}>-</div>
+          <div className="quantidade">{contador}</div>
+          <div className="mais" onClick={() => setContador(contador+1)}>+</div>
         </div>
       </div>
     </div>

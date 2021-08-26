@@ -1,3 +1,5 @@
+import React, {useState} from "react";
+
 const desserts = [
   {
     img: "img/pudim.png",
@@ -6,13 +8,13 @@ const desserts = [
     price: "R$ 4,90",
   },
   {
-    img: "img/pudim.png",
+    img: "img/holandesa.jpeg",
     name: "Torta Holandesa",
     description: "Pedaço",
     price: "R$ 9,90",
   },
   {
-    img: "img/pudim.png",
+    img: "img/bomba.jpeg",
     name: "Bomba de chocolate",
     description: "Unidade",
     price: "R$ 7,90",
@@ -20,6 +22,9 @@ const desserts = [
 ];
 
 const Dessert = (props) => {
+
+  const [contador, setContador] = useState(1);
+
   return (
     <div className="opcao" onclick="selecionarSobremesa(this, 'Pudim', 7.90)">
       <img src={props.img} alt="" />
@@ -27,8 +32,10 @@ const Dessert = (props) => {
       <div className="descricao">{props.description}</div>
       <div className="fundo">
         <div className="preco">{props.price}</div>
-        <div className="check">
-          <ion-icon name="checkmark-circle"></ion-icon>
+        <div className="contador">
+          <div className="menos" onClick={() => setContador(contador-1)}>-</div>
+          <div className="quantidade">{contador}</div>
+          <div className="mais" onClick={() => setContador(contador+1)}>+</div>
         </div>
       </div>
     </div>
