@@ -21,21 +21,44 @@ const dishes = [
   },
 ];
 
+let contadorEspecial = 1;
+
 const Dish = (props) => {
 
   const [contador, setContador] = useState(1);
+  const [selecionado, setSelecionado] = useState("opcao");
+
+  function incrementar() {
+    setContador(contador + 1);
+    contadorEspecial++;
+  }
+
+  function decrementar() {
+    setContador(contador - 1);
+    contadorEspecial--;
+  }
+
+  function selecionar() {
+    if (contadorEspecial !== 0) {
+      setSelecionado("opcao selecionado");
+    } else {
+      setSelecionado("opcao");
+      setContador(1);
+      contadorEspecial = contadorEspecial + 1;
+    }
+  }
 
   return (
-    <div class="opcao">
+    <div className={selecionado} onClick={selecionar}>
       <img src={props.img} alt="" />
       <div className="titulo">{props.name}</div>
       <div className="descricao">{props.description}</div>
       <div className="fundo">
         <div className="preco">{props.price}</div>
         <div className="contador">
-          <div className="menos" onClick={() => setContador(contador-1)}>-</div>
+          <div className="menos" onClick={decrementar}>-</div>
           <div className="quantidade">{contador}</div>
-          <div className="mais" onClick={() => setContador(contador+1)}>+</div>
+          <div className="mais" onClick={incrementar}>+</div>
         </div>
       </div>
     </div>

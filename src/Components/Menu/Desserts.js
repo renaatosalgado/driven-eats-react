@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const desserts = [
   {
@@ -21,21 +21,48 @@ const desserts = [
   },
 ];
 
-const Dessert = (props) => {
+let contadorEspecial = 1;
 
+const Dessert = ({ img, name, description, price }) => {
+  
   const [contador, setContador] = useState(1);
+  const [selecionado, setSelecionado] = useState("opcao");
+
+  function incrementar() {
+    setContador(contador + 1);
+    contadorEspecial++;
+  }
+
+  function decrementar() {
+    setContador(contador - 1);
+    contadorEspecial--;
+  }
+
+  function selecionar() {
+    if (contadorEspecial !== 0) {
+      setSelecionado("opcao selecionado");
+    } else {
+      setSelecionado("opcao");
+      setContador(1);
+      contadorEspecial = contadorEspecial + 1;
+    }
+  }
 
   return (
-    <div className="opcao" onclick="selecionarSobremesa(this, 'Pudim', 7.90)">
-      <img src={props.img} alt="" />
-      <div className="titulo">{props.name}</div>
-      <div className="descricao">{props.description}</div>
+    <div className={selecionado} onClick={selecionar}>
+      <img src={img} alt="" />
+      <div className="titulo">{name}</div>
+      <div className="descricao">{description}</div>
       <div className="fundo">
-        <div className="preco">{props.price}</div>
+        <div className="preco">{price}</div>
         <div className="contador">
-          <div className="menos" onClick={() => setContador(contador-1)}>-</div>
+          <div className="menos" onClick={decrementar}>
+            -
+          </div>
           <div className="quantidade">{contador}</div>
-          <div className="mais" onClick={() => setContador(contador+1)}>+</div>
+          <div className="mais" onClick={incrementar}>
+            +
+          </div>
         </div>
       </div>
     </div>
