@@ -2,65 +2,64 @@ import React, { useState } from "react";
 
 const desserts = [
   {
-    img: "img/pudim.png",
-    name: "Pudim",
-    description: "Pedaço",
-    price: "R$ 4,90",
+    img: "img/sorvete.jpeg",
+    name: "Sorvete Ben&Jerry's - Cookies",
+    description: "Pote 435mL",
+    price: "R$ 34,50",
   },
   {
     img: "img/holandesa.jpeg",
     name: "Torta Holandesa",
     description: "Pedaço",
-    price: "R$ 9,90",
+    price: "R$ 6,50",
   },
   {
-    img: "img/bomba.jpeg",
-    name: "Bomba de chocolate",
-    description: "Unidade",
-    price: "R$ 7,90",
+    img: "img/brownie.jpeg",
+    name: "Brownie de Chocolate",
+    description: "Pedaço",
+    price: "R$ 8,00",
   },
 ];
 
-let contadorEspecial = 1;
+let specialDessertsCounter = 1;
 
 const Dessert = ({ img, name, description, price }) => {
-  
-  const [contador, setContador] = useState(1);
-  const [selecionado, setSelecionado] = useState("opcao");
+  const [counter, setcounter] = useState(1);
+  const [selected, setselected] = useState("option");
 
-  function incrementar() {
-    setContador(contador + 1);
-    contadorEspecial++;
+  function increment() {
+    setcounter(counter + 1);
+    specialDessertsCounter++;
   }
 
-  function decrementar() {
-    setContador(contador - 1);
-    contadorEspecial--;
+  function decrement() {
+    setcounter(counter - 1);
+    specialDessertsCounter--;
   }
 
-  function selecionar() {
-    if (contadorEspecial !== 0) {
-      setSelecionado("opcao selecionado");
+  function selectItem() {
+    if (specialDessertsCounter !== 0) {
+      setselected("option selected");
     } else {
-      setSelecionado("opcao");
-      setContador(1);
-      contadorEspecial = contadorEspecial + 1;
+      setselected("option");
+      setcounter(1);
+      specialDessertsCounter = specialDessertsCounter + 1;
     }
   }
 
   return (
-    <div className={selecionado} onClick={selecionar}>
+    <div className={selected} onClick={selectItem}>
       <img src={img} alt="" />
-      <div className="titulo">{name}</div>
-      <div className="descricao">{description}</div>
-      <div className="fundo">
-        <div className="preco">{price}</div>
-        <div className="contador">
-          <div className="menos" onClick={decrementar}>
+      <div className="title">{name}</div>
+      <div className="description">{description}</div>
+      <div className="bottom">
+        <div className="price">{price}</div>
+        <div className="counter">
+          <div className="minus" onClick={decrement}>
             -
           </div>
-          <div className="quantidade">{contador}</div>
-          <div className="mais" onClick={incrementar}>
+          <div className="quantity">{counter}</div>
+          <div className="plus" onClick={increment}>
             +
           </div>
         </div>
@@ -71,9 +70,9 @@ const Dessert = ({ img, name, description, price }) => {
 
 export default function Desserts() {
   return (
-    <div className="secao">
-      <div className="titulo">Por fim, sua sobremesa</div>
-      <div className="opcoes sobremesa">
+    <div className="section">
+      <div className="title">Por fim, sua sobremesa</div>
+      <div className="options dessert">
         {desserts.map((dessert, index) => (
           <Dessert
             img={dessert.img}

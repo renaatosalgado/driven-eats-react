@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <>
       <div className="footer">
-        <a className="fazer-pedido" onclick="confirmarPedido()">
+        <a className="make-order" onclick="confirmarPedido()">
           Selecione os 3 itens
           <br />
           para fechar o pedido

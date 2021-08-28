@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const dishes = [
   {
     img: "img/arroz.jpeg",
     name: "Arroz com lentilha",
     description: "Arroz muito bom!",
-    price: "R$ 19,90",
+    price: "R$ 19,50",
   },
   {
     img: "img/paella.jpeg",
@@ -17,48 +17,52 @@ const dishes = [
     img: "img/moqueca.jpeg",
     name: "Moqueca de palmito",
     description: "De dar água na boca!!",
-    price: "R$ 29,00",
+    price: "R$ 29,50",
   },
 ];
 
-let contadorEspecial = 1;
+let specialMainCourseCounter = 1;
 
 const Dish = (props) => {
+  const [counter, setCounter] = useState(1);
+  const [selected, setSelected] = useState("option");
 
-  const [contador, setContador] = useState(1);
-  const [selecionado, setSelecionado] = useState("opcao");
-
-  function incrementar() {
-    setContador(contador + 1);
-    contadorEspecial++;
+  function increment() {
+    setCounter(counter + 1);
+    specialMainCourseCounter++;
   }
 
-  function decrementar() {
-    setContador(contador - 1);
-    contadorEspecial--;
+  function decrement() {
+    setCounter(counter - 1);
+    specialMainCourseCounter--;
   }
 
-  function selecionar() {
-    if (contadorEspecial !== 0) {
-      setSelecionado("opcao selecionado");
+  function selectItem() {
+    if (specialMainCourseCounter !== 0) {
+      setSelected("option selected");
     } else {
-      setSelecionado("opcao");
-      setContador(1);
-      contadorEspecial = contadorEspecial + 1;
+      setSelected("option");
+      setCounter(1);
+      specialMainCourseCounter = specialMainCourseCounter + 1;
     }
+    console.log(specialMainCourseCounter);
   }
 
   return (
-    <div className={selecionado} onClick={selecionar}>
+    <div className={selected} onClick={selectItem}>
       <img src={props.img} alt="" />
-      <div className="titulo">{props.name}</div>
-      <div className="descricao">{props.description}</div>
-      <div className="fundo">
-        <div className="preco">{props.price}</div>
-        <div className="contador">
-          <div className="menos" onClick={decrementar}>-</div>
-          <div className="quantidade">{contador}</div>
-          <div className="mais" onClick={incrementar}>+</div>
+      <div className="title">{props.name}</div>
+      <div className="description">{props.description}</div>
+      <div className="bottom">
+        <div className="price">{props.price}</div>
+        <div className="counter">
+          <div className="minus" onClick={decrement}>
+            -
+          </div>
+          <div className="quantity">{counter}</div>
+          <div className="plus" onClick={increment}>
+            +
+          </div>
         </div>
       </div>
     </div>
@@ -67,10 +71,9 @@ const Dish = (props) => {
 
 export default function MainCourse() {
   return (
-    <div className="secao">
-      <div className="titulo">Primeiro, seu prato</div>
-      <div className="opcoes prato">
-
+    <div className="section">
+      <div className="title">Primeiro, seu prato</div>
+      <div className="options main-course">
         {dishes.map((dish, index) => (
           <Dish
             img={dish.img}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400&display=swap');
+
 * {
     box-sizing: border-box;
   }
@@ -23,13 +25,13 @@
     z-index: 1;
   }
   
-  .header .titulo {
+  .header .title {
     font-size: 44px;
     font-family: 'Righteous', cursive;
     letter-spacing: -0.012em;
   }
   
-  .header .subtitulo {
+  .header .caption {
     font-size: 18px;
   }
   
@@ -38,27 +40,27 @@
     padding: 20px;
   }
   
-  .menu .secao {
+  .menu .section {
     margin-bottom: 12px;
   }
   
-  .menu .secao .opcoes {
+  .menu .section .options {
     overflow-x: scroll;
     width: 100%;
     padding: 10px 0;
   }
   
-  .menu .secao > .titulo {
+  .menu .section > .title {
     font-family: 'Righteous', cursive;
     font-size: 26px;
     letter-spacing: -0.018em;
   }
   
-  .menu .secao .opcoes {
+  .menu .section .options {
     display: flex;
   }
   
-  .menu .secao .opcoes .opcao {
+  .menu .section .options .option {
     width: 172px;
     padding: 18px 14px;
     border-radius: 9px;
@@ -67,37 +69,37 @@
     margin-right: 16px;
   }
   
-  .menu .secao .opcoes .opcao img {
+  .menu .section .options .option img {
     width: 144px;
     height: 87px;
     object-fit: cover;
     border-radius: 4px;
   }
   
-  .menu .secao .opcoes .opcao .titulo {
+  .menu .section .options .option .title {
     font-size: 16px;
     font-weight: bold;
     margin: 11px 0 15px;
   }
   
-  .menu .secao .opcoes .opcao .descricao {
+  .menu .section .options .option .description {
     font-size: 15px;
     color: #A6A6A6;
     font-weight: 300;
     margin-bottom: 15px;
   }
   
-  .menu .secao .opcoes .opcao .fundo {
+  .menu .section .options .option .bottom {
     display: flex;
     justify-content: space-between;
   }
   
-  .menu .secao .opcoes .opcao .preco {
+  .menu .section .options .option .price {
     font-weight: bold;
     font-size: 16px;
   }
   
-  .menu .secao .opcoes .opcao .contador {
+  .menu .section .options .option .counter {
     opacity: 0;
     font-weight: bold;
     font-size: 16px;
@@ -107,28 +109,28 @@
     height: 19px;
   }
 
-  .menu .secao .opcoes .opcao .contador .menos {
+  .menu .section .options .option .counter .minus {
     color: #CF2B2B;
   }
 
-  .menu .secao .opcoes .opcao .contador .menos:hover {
+  .menu .section .options .option .counter .minus:hover {
     cursor: pointer;
   }
 
-  .menu .secao .opcoes .opcao .contador .mais {
+  .menu .section .options .option .counter .plus {
     color: #32B72F;
   }
 
-  .menu .secao .opcoes .opcao .contador .mais:hover {
+  .menu .section .options .option .counter .plus:hover {
     cursor: pointer;
   }
 
   
-  .menu .secao .opcoes .opcao.selecionado .contador {
+  .menu .section .options .option.selected .counter {
     opacity: 1;
   }  
   
-  .menu .secao .opcoes .opcao.selecionado {
+  .menu .section .options .option.selected {
     border: 5px solid #32B72F;
     padding: 13px 9px;
   }
@@ -147,7 +149,7 @@
     box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, .1);
   }
   
-  .footer .fazer-pedido {
+  .footer .make-order {
     width: 100%;
     padding: 0 20px;
     color: white;
@@ -162,7 +164,7 @@
     letter-spacing: 0.018em;
   }
   
-  .footer .fazer-pedido.ativo {
+  .footer .make-order.active {
     background-color: #32B72F;
     font-weight: bold;
   }
@@ -181,7 +183,7 @@
     padding: 19px;
   }
   
-  .confirmar-pedido {
+  .confirm-order {
     background-color: #50D074;
     max-width: 480px;
     width: 100%;
@@ -193,24 +195,24 @@
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
   }
   
-  .confirmar-pedido .titulo {
+  .confirm-order .title {
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
   }
   
-  .confirmar-pedido ul li {
+  .confirm-order ul li {
     display: flex;
     justify-content: space-between;
     margin: 16px 0;
   }
   
-  .confirmar-pedido ul li.total {
+  .confirm-order ul li.total {
     font-weight: bold;
     text-transform: uppercase;
   }
   
-  .confirmar-pedido button {
+  .confirm-order button {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -219,7 +221,7 @@
     font-weight: bold;
   }
   
-  .confirmar-pedido .confirmar {
+  .confirm-order .confirm {
     background-color: white;
     color: #50D074;
     font-size: 22px;
@@ -227,14 +229,14 @@
     border-radius: 100px;
   }
   
-  .confirmar-pedido .cancelar {
+  .confirm-order .cancel {
     color: white;
     background-color: transparent;
     font-size: 20px;
     margin-top: 10px;
   }
   
-  .escondido {
+  .hidden-class {
     display: none;
   }
   

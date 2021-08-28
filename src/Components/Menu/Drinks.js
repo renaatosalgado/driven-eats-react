@@ -5,62 +5,61 @@ const drinks = [
     img: "img/kombucha.jpeg",
     name: "Kombucha",
     description: "Garrafa 450mL",
-    price: "R$ 4,90",
+    price: "R$ 12,50",
   },
   {
     img: "img/caldodecana.jpeg",
     name: "Caldo de cana",
     description: "Copo 500mL",
-    price: "R$ 5,50",
+    price: "R$ 7,00",
   },
   {
     img: "img/laranja.jpeg",
     name: "Suco de laranja",
     description: "Copo 500mL",
-    price: "R$ 5,00",
+    price: "R$ 5,50",
   },
 ];
 
-let contadorEspecial = 1;
+let specialDrinksCounter = 1;
 
 const Drink = (props) => {
-  
-  const [contador, setContador] = useState(1);
-  const [selecionado, setSelecionado] = useState("opcao");
+  const [counter, setCounter] = useState(1);
+  const [selected, setSelected] = useState("option");
 
-  function incrementar() {
-    setContador(contador + 1);
-    contadorEspecial++;
+  function increment() {
+    setCounter(counter + 1);
+    specialDrinksCounter++;
   }
 
-  function decrementar() {
-    setContador(contador - 1);
-    contadorEspecial--;
+  function decrement() {
+    setCounter(counter - 1);
+    specialDrinksCounter--;
   }
 
-  function selecionar() {
-    if (contadorEspecial !== 0) {
-      setSelecionado("opcao selecionado");
+  function selectItem() {
+    if (specialDrinksCounter !== 0) {
+      setSelected("option selected");
     } else {
-      setSelecionado("opcao");
-      setContador(1);
-      contadorEspecial = contadorEspecial + 1;
+      setSelected("option");
+      setCounter(1);
+      specialDrinksCounter = specialDrinksCounter + 1;
     }
   }
 
   return (
-    <div className={selecionado} onClick={selecionar}>
+    <div className={selected} onClick={selectItem}>
       <img src={props.img} alt="" />
-      <div className="titulo">{props.name}</div>
-      <div className="descricao">{props.description}</div>
-      <div className="fundo">
-        <div className="preco">{props.price}</div>
-        <div className="contador">
-          <div className="menos" onClick={decrementar}>
+      <div className="title">{props.name}</div>
+      <div className="description">{props.description}</div>
+      <div className="bottom">
+        <div className="price">{props.price}</div>
+        <div className="counter">
+          <div className="minus" onClick={decrement}>
             -
           </div>
-          <div className="quantidade">{contador}</div>
-          <div className="mais" onClick={incrementar}>
+          <div className="quantity">{counter}</div>
+          <div className="plus" onClick={increment}>
             +
           </div>
         </div>
@@ -72,9 +71,9 @@ const Drink = (props) => {
 export default function Drinks() {
   return (
     <>
-      <div className="secao">
-        <div className="titulo">Agora, sua bebida</div>
-        <div className="opcoes bebida">
+      <div className="section">
+        <div className="title">Agora, sua bebida</div>
+        <div className="options drink">
           {drinks.map((drink, index) => (
             <Drink
               img={drink.img}
