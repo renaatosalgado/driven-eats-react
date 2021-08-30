@@ -6,24 +6,27 @@ const dishes = [
     name: "Arroz com lentilha",
     description: "Arroz muito bom!",
     price: "R$ 19,50",
+    quantity: 0,
   },
   {
     img: "img/paella.jpeg",
     name: "Paella",
     description: "Legumes saborosos.",
     price: "R$ 23,50",
+    quantity: 0,
   },
   {
     img: "img/moqueca.jpeg",
     name: "Moqueca de palmito",
     description: "De dar água na boca!!",
     price: "R$ 29,50",
+    quantity: 0,
   },
 ];
 
 let specialMainCourseCounter = 1;
 
-const Dish = (props) => {
+const Dish = ({img, name, description, price, quantity}) => {
   const [counter, setCounter] = useState(1);
   const [selected, setSelected] = useState("option");
 
@@ -37,7 +40,7 @@ const Dish = (props) => {
     specialMainCourseCounter--;
   }
 
-  function selectItem() {
+  function selectMainCourse() {
     if (specialMainCourseCounter !== 0) {
       setSelected("option selected");
     } else {
@@ -49,12 +52,12 @@ const Dish = (props) => {
   }
 
   return (
-    <div className={selected} onClick={selectItem}>
-      <img src={props.img} alt="" />
-      <div className="title">{props.name}</div>
-      <div className="description">{props.description}</div>
+    <div className={selected} onClick={selectMainCourse}>
+      <img src={img} alt="" />
+      <div className="title">{name}</div>
+      <div className="description">{description}</div>
       <div className="bottom">
-        <div className="price">{props.price}</div>
+        <div className="price">{price}</div>
         <div className="counter">
           <div className="minus" onClick={decrement}>
             -

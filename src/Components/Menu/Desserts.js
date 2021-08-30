@@ -37,7 +37,7 @@ const Dessert = ({ img, name, description, price }) => {
     specialDessertsCounter--;
   }
 
-  function selectItem() {
+  function selectDessert() {
     if (specialDessertsCounter !== 0) {
       setselected("option selected");
     } else {
@@ -48,7 +48,7 @@ const Dessert = ({ img, name, description, price }) => {
   }
 
   return (
-    <div className={selected} onClick={selectItem}>
+    <div className={selected} onClick={selectDessert}>
       <img src={img} alt="" />
       <div className="title">{name}</div>
       <div className="description">{description}</div>

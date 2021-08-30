@@ -22,10 +22,10 @@ export default function ConfirmOrder() {
               <div className="price">R$ 27,70</div>
             </li>
           </ul>
-          <button className="confirm" onclick="enviarZap()">
+          <button className="confirm">
             Tudo certo, pode pedir!
           </button>
-          <button className="cancel" onclick="cancelarPedido()">
+          <button className="cancel">
             Cancelar
           </button>
         </div>

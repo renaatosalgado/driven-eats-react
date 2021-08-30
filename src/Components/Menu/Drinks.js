@@ -23,7 +23,7 @@ const drinks = [
 
 let specialDrinksCounter = 1;
 
-const Drink = (props) => {
+const Drink = ({img, name, description, price}) => {
   const [counter, setCounter] = useState(1);
   const [selected, setSelected] = useState("option");
 
@@ -37,7 +37,7 @@ const Drink = (props) => {
     specialDrinksCounter--;
   }
 
-  function selectItem() {
+  function selectDrink() {
     if (specialDrinksCounter !== 0) {
       setSelected("option selected");
     } else {
@@ -48,12 +48,12 @@ const Drink = (props) => {
   }
 
   return (
-    <div className={selected} onClick={selectItem}>
-      <img src={props.img} alt="" />
-      <div className="title">{props.name}</div>
-      <div className="description">{props.description}</div>
+    <div className={selected} onClick={selectDrink}>
+      <img src={img} alt="" />
+      <div className="title">{name}</div>
+      <div className="description">{description}</div>
       <div className="bottom">
-        <div className="price">{props.price}</div>
+        <div className="price">{price}</div>
         <div className="counter">
           <div className="minus" onClick={decrement}>
             -
